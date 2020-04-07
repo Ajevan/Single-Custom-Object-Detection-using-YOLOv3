@@ -31,7 +31,7 @@ http.createServer(function (req, res) {
             var oldpath = files.filetoupload.path;
             var loc=new Date().getTime();
             name = targetFile + loc + ".jpg";
-            out_name = outFile + loc + ".jpg";
+            out_name = outFile + loc + ".png";
             var newpath = __dirname + '/' + name;
             //console.log(newpath);
             var output = "";
