@@ -5,9 +5,9 @@ var path = require('path');
 var url = require('url');
 const { spawn } = require('child_process');
 
-var nameFile = 'data/coco.names';
+var nameFile = 'data/coco.clss';
 var sourceFile = 'data/input/';
-var outFile = 'data/output/';
+var outFile = 'output/';
 
 var name;
 //console.log(__dirname);
@@ -18,8 +18,19 @@ http.createServer(function (req, res) {
 
     if (pathname.split('.').pop() == 'jpg') {
         //var file = fs.readFileSync("1585708180659.jpg");
-        fs.readFile(name, function (err, data) {
+	var p = pathname.substring(1);
+	console.log(p);
+        fs.readFile(p, function (err, data) {
             res.writeHead(200, { 'Content-Type': 'image/jpeg' });
+            res.end(data);
+        });
+    }
+    else if (pathname.split('.').pop() == 'png') {
+        //var file = fs.readFileSync("1585708180659.jpg");
+	var p = pathname.substring(1);
+	console.log(p);
+        fs.readFile(p, function (err, data) {
+            res.writeHead(200, { 'Content-Type': 'image/png' });
             res.end(data);
         });
     }
@@ -29,7 +40,7 @@ http.createServer(function (req, res) {
             //console.log(fields.name.split(' '));
             var oldpath = files.filetoupload.path;
             var loc=new Date().getTime();
-            name = targetFile + loc + ".jpg";
+            name = sourceFile + loc + ".jpg";
             out_name = outFile + loc + ".png";
             var newpath = __dirname + '/' + name;
             //console.log(newpath);
@@ -48,18 +59,18 @@ http.createServer(function (req, res) {
                 res.write('<h1>upload:' + name + '</h1>');
                 res.write('<style>img {padding: 5px;}</style>');
                 res.write('<img src="' + name + '" width="500" height="500" id = "imgI"></img>');
-                res.write('<img src="' + out_name + '" width="500" height="500" id = "imgI"></img>');
             });
             var dataToSend;
 
-            const python = spawn('python', ['single_detect.py', name.split("\\")[name.split("\\").length-1]]);
+            const python = spawn('python', ['single_detect.py']);
             python.stdout.on('data', function (data) {
-                //console.log('Pipe data from python script ...');
+                console.log('Pipe data from python script ...');
                 dataToSend = data.toString();
                 //console.log(dataToSend);
             });
             python.on('close', (code) => {
                 //res.write(dataToSend);
+		res.write('<img src="' + out_name + '" width="500" height="500" id = "imgO"> <img>');
             });
 
         });
