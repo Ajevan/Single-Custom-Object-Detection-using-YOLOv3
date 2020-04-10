@@ -40,13 +40,15 @@ $ python3 test.py --weights_path weights/yolov3.weights
 $ node app.js
 
 ## To run the detection python program:
-$ python3 detect.py --image_folder data/samples/ (for multi-detection)
+$ python3 detect.py --image_folder data/samples/<br />
+(for multi-detection)
 
 ## To run the single/custom detection python program:
-$ python3 single_detect.py --image_folder data/input/ (for single-detection)
+$ python3 single_detect.py --image_folder data/input/<br /> 
+(for single-detection)
 
 With the single detection, it uses the coco.clss for comparing user chosen class to all predicted classes.
-<b> If you are running the application in node, you do not have to edit the coco.clss file, the web app will do that for you.</b>
+<b>If you are running the application in node, you do not have to edit the coco.clss file, the web app will do that for you.</b><br />
 <b>To add a class into the coco.clss file, you would have each item on it's own row with an empty line at the end.</b>
 
 To upload the image, please upload to the data/input folder, same one as the command for single detect.
