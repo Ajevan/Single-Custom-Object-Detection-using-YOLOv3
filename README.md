@@ -47,7 +47,7 @@ $ python3 detect.py --image_folder data/samples/<br />
 $ python3 single_detect.py --image_folder data/input/<br /> 
 (for single-detection)
 
-With the single detection, it uses the coco.clss for comparing user chosen class to all predicted classes.
+With the single detection, it uses the coco.clss for comparing user chosen class to all predicted classes.<br />
 <b>If you are running the application in node, you do not have to edit the coco.clss file, the web app will do that for you.</b><br />
 <b>To add a class into the coco.clss file, you would have each item on it's own row with an empty line at the end.</b>
 
