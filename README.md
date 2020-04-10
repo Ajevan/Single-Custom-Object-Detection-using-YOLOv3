@@ -8,18 +8,17 @@ https://github.com/eriklindernoren/PyTorch-YOLOv3
 
 ## Clone and install requirements
 
-$ git clone https://github.com/eriklindernoren/PyTorch-YOLOv3
-$ cd PyTorch-YOLOv3/
+$ cd Single-Custom-Object-Detection-using-YOLOv3/<br />
 $ sudo pip3 install -r requirements.txt
 
 ## Download pretrained weights
 
-$ cd weights/
+$ cd weights/<br />
 $ bash download_weights.sh
 
 ## Download COCO
 
-$ cd data/
+$ cd data/<br />
 $ bash get_coco_dataset.sh
 
 ## If you do not have Node installed please do so in order to run the website:
