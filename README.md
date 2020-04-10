@@ -45,10 +45,9 @@ $ python3 detect.py --image_folder data/samples/ (for multi-detection)
 ## To run the single/custom detection python program:
 $ python3 single_detect.py --image_folder data/input/ (for single-detection)
 
-## Also to edit the class you want to search for, edit the coco.clss to add a class followed by a newline character.
-
-With the single detection, it uses the coco.clss for comparing user chosen class to all predicted classes
-Please look at the coco.clss file for structure of how to add classes to detect.
+With the single detection, it uses the coco.clss for comparing user chosen class to all predicted classes.
+<b> If you are running the application in node, you do not have to edit the coco.clss file, the web app will do that for you.</b>
+<b>To add a class into the coco.clss file, you would have each item on it's own row with an empty line at the end.</b>
 
 To upload the image, please upload to the data/input folder, same one as the command for single detect.
 
